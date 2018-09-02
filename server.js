@@ -36,6 +36,9 @@ server.on('error', (err) => {
   console.error('Server error:', err);
 });
 
-server.listen(process.env.PORT, process.env.IP, () => {
-  console.log('Server started on 8080');
+const port = process.env.PORT || 8080;
+const IP = process.env.IP || "localhost"
+
+server.listen(port, IP, () => {
+  console.log('Server started on ' + IP + ":" + port);
 });
